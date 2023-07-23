@@ -52,3 +52,9 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+---
+
+## prettier-plugin-astro 관련 메모
+
+vscode에서 format-on-save가 동작하게 하려면 [prettier extension에 대한 설정](https://github.com/withastro/prettier-plugin-astro#using-in-vs-code)이 필요한데, 이 중 `prettier.documentSelectors` 옵션은 directory 레벨 설정에서 값을 지정할 수 없는 옵션이라, 최소 workspace 레벨 설정에서 지정해야 한다.
