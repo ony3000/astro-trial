@@ -8,57 +8,21 @@ interface Props {
 const { href, title, body } = Astro.props;
 ---
 
-<li class="link-card">
-  <a href={href}>
-    <h2>
+<li
+  class="group flex list-none rounded-[0.6rem] bg-white bg-none bg-[length:400%] bg-[100%] p-1 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-2px_rgba(0,0,0,0.1)] transition-[background-position] duration-[0.6s] ease-[cubic-bezier(0.22,1,0.36,1)] focus-within:bg-[0] focus-within:bg-gradient-accent hover:bg-[0] hover:bg-gradient-accent"
+>
+  <a
+    href={href}
+    class="w-full rounded-[0.35rem] bg-white px-[1.3rem] py-4 leading-[1.4] text-[#111] no-underline opacity-80"
+  >
+    <h2
+      class="m-0 text-[1.25rem] transition-[color] duration-[0.6s] ease-[cubic-bezier(0.22,1,0.36,1)] group-focus-within:text-accent group-hover:text-accent"
+    >
       {title}
       <span>&rarr;</span>
     </h2>
-    <p>
+    <p class="mb-0 mt-2 text-[#444]">
       {body}
     </p>
   </a>
 </li>
-<style>
-  .link-card {
-    list-style: none;
-    display: flex;
-    padding: 0.25rem;
-    background-color: white;
-    background-image: none;
-    background-size: 400%;
-    border-radius: 0.6rem;
-    background-position: 100%;
-    transition: background-position 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-      0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  }
-
-  .link-card > a {
-    width: 100%;
-    text-decoration: none;
-    line-height: 1.4;
-    padding: 1rem 1.3rem;
-    border-radius: 0.35rem;
-    color: #111;
-    background-color: white;
-    opacity: 0.8;
-  }
-  h2 {
-    margin: 0;
-    font-size: 1.25rem;
-    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-  p {
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    color: #444;
-  }
-  .link-card:is(:hover, :focus-within) {
-    background-position: 0;
-    background-image: var(--accent-gradient);
-  }
-  .link-card:is(:hover, :focus-within) h2 {
-    color: rgb(var(--accent));
-  }
-</style>
